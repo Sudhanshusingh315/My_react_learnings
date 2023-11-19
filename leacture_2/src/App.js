@@ -13,15 +13,13 @@ function App(){
             <div>hello</div>
             {/* 1st revise this */}
             <Video></Video>
-            {/* 2nd */}
+            {/* Second part of the video starts at 43:05  */}
             <Navbar></Navbar>
-            {/* 3rd */}
             <Gallery></Gallery>
-            {/* 4th */}
             <Curly></Curly>
-            {/* 5th */}
             <Props title="animated1"></Props> 
             <Props title="animated2"></Props>
+
         </div>
 
     )
