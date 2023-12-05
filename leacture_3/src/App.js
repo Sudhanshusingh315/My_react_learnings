@@ -1,27 +1,35 @@
-import './App.css'
-import Video from './Components/Video/Video';
-import videos from './data/data';
+import "./App.css";
+import PlayButton from "./Components/Video/PlayButton";
+import Video from "./Components/Video/Video";
+import videos from "./data/data";
 function App() {
- 
-  return(
+  return (
     <>
+      <div className="App">
+        {videos.map((video) => (
+          <Video let key={video.id} {...video}>
+            <PlayButton
+              onPlay={() => console.log("Playing ",video.title)}
+              onPause={() => {
+                console.log("Pause",video.title);
+              }}
+            >
+             {video.title} 
+            </PlayButton>
+          </Video>
+        ))}
 
-    <div className='App'>
-    {
+        {/* This is how i used to pass and make components */}
+        {/* <Video {...obj}/> */}
+        {/* <Video {...obj_1}/> */}
+        {/* <Video {...obj_1}/> */}
 
-      videos.map(video => <Video let key={video.id} {...video} />)
+        {/* ADDING THIS BUTTON IN VIDEO component */}
+        {/* <PlayButton message='now playing' onPlay={()=>console.log('Playing')} onPause={()=>console.log('Paused')}>Play</PlayButton> */}
 
-    }
-
-    {/* This is how i used to pass and make components */}
-    {/* <Video {...obj}/> */}
-    {/* <Video {...obj_1}/> */}
-    {/* <Video {...obj_1}/> */}
-    
-    </div>
+        {/* <PlayButton message='now pause2'onSmash={()=>alert('HELLO')}>Pause</PlayButton> */}
+      </div>
     </>
-
-  )
+  );
 }
-
 export default App;
