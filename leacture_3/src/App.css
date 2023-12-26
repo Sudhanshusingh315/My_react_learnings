@@ -10,3 +10,13 @@
     height:100vh;
   }
 
+.testing{
+  display: flex; 
+  border: 2px solid brown; 
+  width: 40px;
+  height: 40px;
+  align-items: center ;
+justify-content: center;
+
+
+}

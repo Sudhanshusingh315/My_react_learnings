@@ -1,4 +1,5 @@
 import "./App.css";
+import Counter from "./Components/Counter";
 import PlayButton from "./Components/Video/PlayButton";
 import Video from "./Components/Video/Video";
 import videos from "./data/data";
@@ -28,6 +29,7 @@ function App() {
         {/* <PlayButton message='now playing' onPlay={()=>console.log('Playing')} onPause={()=>console.log('Paused')}>Play</PlayButton> */}
 
         {/* <PlayButton message='now pause2'onSmash={()=>alert('HELLO')}>Pause</PlayButton> */}
+              <Counter></Counter>
       </div>
     </>
   );
