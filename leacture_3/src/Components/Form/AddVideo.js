@@ -1,18 +1,24 @@
 import "./AddVideo.css";
 import { useState } from "react";
-// Making a form in react js
-export default function AddVideo({addVideo}) {
-  const [video, setVideo] = useState({
+
+const initialState = {
+   
     time: "1 month ago",
     channel: "coder meow",
     verified: true,
-  });
+    title: "",
+    views: "" 
+  }
+// Making a form in react js
+export default function AddVideo({addVideo}) {
+  const [video, setVideo] = useState(initialState);
 
   // this is comming form add button
   function handSubmit(e) {
     e.preventDefault();
     console.log(video);
     addVideo(video);
+    setVideo(initialState);
 
   }
 
@@ -27,8 +33,8 @@ export default function AddVideo({addVideo}) {
   return (
     <>
       <form>
-        <input type="text" name="title" onChange={handleChange} placeholder="title " />
-        <input type="text" name="views" onChange={handleChange} placeholder="views" />
+        <input type="text" name="title" onChange={handleChange} placeholder="title" value= {video.title} />
+        <input type="text" name="views" onChange={handleChange} placeholder="views" value={video.views}/>
         <button onClick={handSubmit}>Add Me</button>
       </form>
     </>
