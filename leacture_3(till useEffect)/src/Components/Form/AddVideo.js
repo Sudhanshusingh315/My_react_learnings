@@ -11,18 +11,18 @@ const initialState = {
     views: "" 
   }
 // Making a form in react js
-export default function AddVideo({dispatch,editableVideo,updateVideo}) {
+export default function AddVideo({addVideo,editableVideo,updateVideo}) {
   const [video, setVideo] = useState(initialState);
 
   // this is comming form add button
   function handSubmit(e) {
     e.preventDefault();
     if(editableVideo){
-      dispatch({type:'UPDATE', payload:video}) 
+      updateVideo(video)
     }
     else{
 
-      dispatch({type:'ADD',payload:video});
+      addVideo(video);
     }
     setVideo(initialState);
 

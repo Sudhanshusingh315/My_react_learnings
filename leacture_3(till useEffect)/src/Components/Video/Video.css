@@ -3,13 +3,6 @@
     color:white;
 }
 
-.container.darkMode{
-  color: black;
-}
-
-.container.lightMode{
-  color: white;
-}
 .container{
     border: 2px solid white;
     padding: 2px 2px 2px 2px;

@@ -5,9 +5,9 @@
 
 }
 .App{
+    background-color: #333;
     width: 100%;
     height: 200vh;
-    /* background-color: #333;  */
   }
 
 .testing{
@@ -20,14 +20,3 @@ justify-content: center;
 
 
 }
-
-.darkMode{
-  background-color: #333;  
-}
-.lightMode{
-  background-color: #ccc;  
-}
-
-
-
-

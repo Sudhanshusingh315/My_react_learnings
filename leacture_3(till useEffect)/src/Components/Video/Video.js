@@ -1,6 +1,4 @@
-import { createContext, useContext } from "react";
 import "./Video.css";
-import ThemeContext from "../../context/ThemeContext";
 
 export default function Video({
   title,
@@ -11,19 +9,18 @@ export default function Video({
   verified,
   children,
   deleteVideo,
-  editVideo
+  editVideo,
 }) {
-  const theme = useContext(ThemeContext);
   const imagePlaceHolder = "https://loremflickr.com/290/190";
 
   return (
     <>
-      <div className= {`container ${theme}`}>
+      <div className="container">
         <button className="close" onClick={() => deleteVideo(id)}>
           x
         </button>
-        <button className="edit" onClick={()=> editVideo(id)}>
-            ✏️ 
+        <button className="edit" onClick={() => editVideo(id)}>
+          ✏️
         </button>
         <img src={imagePlaceHolder} alt="Youtube Thumbnail " />
         <div className="title">{title}</div>

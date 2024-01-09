@@ -1,9 +1,9 @@
 import './App.css'
-import Video  from './Components/Video'
+import VideoList from './Components/VideoList'
 function App() {
   return(
-
-    <Video></Video>
+    
+    <VideoList /> 
   )
  
 }
