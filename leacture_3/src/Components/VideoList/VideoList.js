@@ -2,7 +2,10 @@
 
 import Video from "../Video/Video";
 import PlayButton from "../Video/PlayButton";
-export default function VideoList({ videos, deleteVideo,editVideo }) {
+import { useContext } from "react";
+import VideoContext from "../../context/VideoContext";
+export default function VideoList({deleteVideo,editVideo }) {
+  const videos = useContext(VideoContext)
   return (
     <> 
     {

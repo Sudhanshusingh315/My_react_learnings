@@ -1,6 +1,8 @@
 import "./AddVideo.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
+import VideoDispatchContext from "../../context/VideoDispatchContext";
+import useVideoDispatch from "../../Hooks/VideoDispatch";
 
 const initialState = {
    
@@ -11,9 +13,10 @@ const initialState = {
     views: "" 
   }
 // Making a form in react js
-export default function AddVideo({dispatch,editableVideo,updateVideo}) {
+export default function AddVideo({editableVideo,updateVideo}) {
   const [video, setVideo] = useState(initialState);
-
+  // const dispatch = useContext(VideoDispatchContext);
+  const dispatch = useVideoDispatch();
   // this is comming form add button
   function handSubmit(e) {
     e.preventDefault();

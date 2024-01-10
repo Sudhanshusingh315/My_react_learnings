@@ -1,11 +1,10 @@
-import videosBD from "../data/Data";
 import Video from "./Video/Video";
 import "./VideoList.css";
-export default function VideoList() {
+export default function VideoList({videos}) {
   return (
     <>
       <div className="VideoList">
-        {videosBD.map((video) => (
+        {videos.map((video) => (
           <Video key={video.id} {...video}>
             </Video>
         ))}
