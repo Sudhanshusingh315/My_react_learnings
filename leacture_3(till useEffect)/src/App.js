@@ -38,6 +38,7 @@ function App() {
     
     <>
       <div className="App">
+        {console.log("app")}
 
         <AddVideo addVideo={addVideo} editableVideo={editableVideo} updateVideo={updateVideo}/>
         <VideoList videos={videos} deleteVideo={deleteVideo} editVideo={editVideo}/>

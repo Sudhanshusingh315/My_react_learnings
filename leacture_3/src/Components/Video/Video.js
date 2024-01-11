@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import "./Video.css";
 import ThemeContext from "../../context/ThemeContext";
 
@@ -15,6 +15,12 @@ export default function Video({
 }) {
   const theme = useContext(ThemeContext);
   const imagePlaceHolder = "https://loremflickr.com/290/190";
+
+  useEffect(()=>{
+    console.log("video playing", id);
+  });
+
+
 
   return (
     <>

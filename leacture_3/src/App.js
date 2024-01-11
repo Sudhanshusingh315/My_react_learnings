@@ -6,6 +6,7 @@ import VideoList from "./Components/VideoList/VideoList";
 import ThemeContext from "./context/ThemeContext";
 import VideoContext from "./context/VideoContext";
 import VideoDispatchContext from "./context/VideoDispatchContext";
+import Counter from "./Components/Counter";
 function App() {
   const [editableVideo, setEditableVideo] = useState(null);
   const [videos, dispatch] = useReducer(videoReducer, videoDB);
@@ -49,6 +50,7 @@ function App() {
       <VideoContext.Provider value={videos}>
         <VideoDispatchContext.Provider value={dispatch}>
           <div className={`App ${mode}`}>
+            <Counter />
             <button
               onClick={() =>
                 setMode(mode === "darkMode" ? "lightMode" : "darkMode")
