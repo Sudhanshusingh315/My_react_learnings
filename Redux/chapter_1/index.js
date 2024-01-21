@@ -9,13 +9,6 @@ import { thunk } from "redux-thunk";
 // action name constant
 
 // const init = "account/init";
-const inc = "account/increment";
-const dec = "account/decerement";
-const incBYAmt = "account/incrementBYAmount";
-const getAccUserPending = "account/getUser/pending";
-const getAccUserFullfiled = "account/getUser/fulfiled";
-const getAccUserRejected = "account/getUser/rejected";
-// store
 const store = createStore(
   combineReducers({
     account: accountReducer,
