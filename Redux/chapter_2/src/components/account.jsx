@@ -1,32 +1,22 @@
-import { useState } from "react";
+import { useState} from "react";
+import { useSelector,useDispatch } from "react-redux";
 import "./account.css";
-
+import { increment } from "../actions";
+import { decerement } from "../actions";
 function Account() {
-    const [account,setAccount] = useState({amount:0})
-    const [value,setValue] = useState(0);
-    function increment(){
-        setAccount({amount:account.amount+1});
-    }
-    function decrement(){
-        setAccount({amount:account.amount-1});
-    }
-    function settingValue(e){
-        console.log(e.target.value);
-        setValue((+e.target.value));
-    }
-
-    function incrementByAmount(){
-        setAccount({amount:account.amount+value})
-    } 
+  // useSelector
+    const amount = useSelector(state=>state.account.amount);
+  // useDispatch 
+    const dispath = useDispatch(); 
 
   return (
     <div className="card">
       <h4>Account component</h4>
-      <h3>Amount: ${account.amount}</h3>
-      <button onClick={increment}>increment +</button>
-      <button onClick={decrement}>decrement -</button>
-      <input type="text" placeholder={value} onChange={settingValue}></input>
-      <button onClick={incrementByAmount}>Increase By Amount</button>
+      <h3>Amount: ${amount}</h3>
+      <button onClick={()=>dispath(increment())}>increment +</button>
+      <button onClick={()=>dispath(decerement())}>decrement -</button>
+      {/* <input type="text" placeholder={value} onChange={settingValue}></input>
+      <button onClick={incrementByAmount}>Increase By Amount</button> */}
     </div>
   );
 }

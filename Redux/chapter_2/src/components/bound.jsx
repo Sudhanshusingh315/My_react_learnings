@@ -1,15 +1,13 @@
-import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { incrementBounus } from "../actions";
 function Bouns() {
-  const [bouns, setBouns] = useState({ points: 0 });
-  const increment = () => {
-    setBouns({ points: bouns.points + 1 });
-  };
+  const points = useSelector(state=>state.bonus.points);
+  const dispatch = useDispatch();
   return (
     <div className="card">
       <h3>Bound Component</h3>
-      <h2>Total points: {bouns.points}</h2>
-      <button onClick={increment}>Increment + </button>
+      <h2>Total points: {points}</h2>
+      <button onClick={()=>dispatch(incrementBounus())}>Increment + </button>
     </div>
   );
 }

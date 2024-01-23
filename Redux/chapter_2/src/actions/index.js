@@ -1,4 +1,7 @@
 // These are difining names of cases
+import axios from "axios";
+
+// action names
 export const inc = "account/increment";
 export const dec = "account/decerement";
 export const incBYAmt = "account/incrementBYAmount";
@@ -8,7 +11,7 @@ export const getAccUserRejected = "account/getUser/rejected";
 export const incBonus = "bouns/incBonus";
 
 
-// These are called actions reducers
+// These are called actions creators 
 export function getUser(id) {
   return async (dispatch, getState) => {
     try {
@@ -29,12 +32,16 @@ export function getAccountUserPending(value) {
   return { type: getAccUserPending, payload: value };
 }
 export function increment() {
-  return { type: "increment" };
+  return { type: inc};
 }
 
 export function decerement() {
-  return { type: "decerement" };
+  return { type: dec };
 }
 export function incrementBYAmount() {
-  return { type: "incrementBYAmount", payload: 5 };
+  return { type: incBYAmt, payload: 5 };
+}
+// For Bonus reducer
+export function incrementBounus(){
+  return {type:incBonus};
 }
