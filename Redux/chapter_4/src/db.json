@@ -555,19 +555,45 @@
   ],
   "cart": [
     {
-      "id": "3",
-      "title": "Samsung Universe 9",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "brand": "Samsung",
-      "price": 1249,
+      "id": "1",
+      "title": "iPhone 9",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+      "brand": "Apple",
+      "price": 549,
+      "quantity": "2",
+      "requestId": "ZyZb1ffcO6zJoJXzs0O8F",
+      "signal": {}
+    },
+    {
+      "id": "1",
+      "title": "iPhone 9",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+      "brand": "Apple",
+      "price": 549,
       "quantity": 1
     },
     {
-      "id": "3",
-      "title": "Samsung Universe 9",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "brand": "Samsung",
-      "price": 1249,
+      "id": "1",
+      "title": "iPhone 9",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+      "brand": "Apple",
+      "price": 549,
+      "quantity": 1
+    },
+    {
+      "id": "1",
+      "title": "iPhone 9",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+      "brand": "Apple",
+      "price": 549,
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "title": "OPPOF19",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg",
+      "brand": "OPPO",
+      "price": 280,
       "quantity": 1
     }
   ]

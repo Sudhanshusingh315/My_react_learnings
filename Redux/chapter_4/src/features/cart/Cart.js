@@ -1,11 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAsync } from "./CartSlice";
-// import { fetchAsync } from "./productSlice";
+import { deleteAsync, updateAsync } from "./CartSlice";
+import { updateItems } from "./CartsApi";
 import "./cart.css";
 
 export function Cart() {
   const items = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+  const handleChange = (e, id) => {
+    let changed_value = +e.target.value;
+    console.log(changed_value);
+    // do the upate thing over here
+    // dispatch(updateAsync({ id, change: { quantity: changed_value } }));
+    dispatch(updateAsync({ id, change: { quantity: changed_value } }));
+  };
   return (
     <>
       <div>
@@ -23,7 +30,7 @@ export function Cart() {
                 Quantity
                 <select
                   value={item.quantity}
-                  // onChange={(e) => handleChange(e, item.id)}
+                  onChange={(e) => handleChange(e, item.id)}
                 >
                   <option value={1}>1</option>
                   <option value={2}>2</option>
@@ -38,10 +45,10 @@ export function Cart() {
             </div>
           ))}
         </div>
-        {/* <h1>
+        <h1>
           Total:
           {items.reduce((acc, item) => item.price * item.quantity + acc, 0)}
-        </h1> */}
+        </h1>
       </div>
     </>
   );
