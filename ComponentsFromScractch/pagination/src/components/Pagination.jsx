@@ -2,7 +2,7 @@ import './Pagination.css'
 
 const Pagination = ({pageNo, setPageNo}) =>{
     const preThreeNoArray = Array.from({length:3},(_,index)=> pageNo - 1 - index).filter((element)=>element>0).reverse()
-    const nextThreeNoArray =Array.from({length:3},(_,index)=> pageNo + index)
+    const nextThreeNoArray = Array.from({length:3},(_,index)=> pageNo + index)
     const paginationArary = [...preThreeNoArray,...nextThreeNoArray];
     console.log("pagination array",paginationArary);
     const handleNext = () =>{
