@@ -30,8 +30,7 @@ const Otp = ({ otpLength = 6 }) => {
             if(index > 0) ref.current[index - 1].focus();
             return;
         }
-
-
+        
         if(isNaN(key)){
             return ;
         }
