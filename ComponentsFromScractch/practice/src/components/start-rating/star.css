@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    border: 2px solid red;
+    width: 60%;
+    margin-inline: auto;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.star{
+    font-size: 5rem;
+    transition: all 200ms ease-in;
+
+}
+
+.star:hover{
+    transform: scale(1.4);
+    color: rgb(112, 104, 59);    
+}
+
+.gold{
+    color: goldenrod;
+}
+
