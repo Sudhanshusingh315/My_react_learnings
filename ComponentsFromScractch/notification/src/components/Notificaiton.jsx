@@ -1,65 +1,57 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./notification.css";
 const Notificaiton = () => {
-    let timerId;
-    const [show, setShow] = useState(false);
-    const [toasts, setToasts] = useState([]);
-
-    const handleClose = () => {
-        setShow(false);
+    const [notifications, setNotifications] = useState([]);
+    const timerRef = useRef({});
+    console.log("timerref",timerRef);
+    const handleShow = (message, type) => {
+        const id = new Date().getTime();
+        setNotifications((prev) => [...prev, { id, message, type }]);
+        timerRef.current[id] = setTimeout(() => {
+            handleHide(id);
+        }, 5000);
     };
 
-    const handlShow = (e, typeOfToast) => {
-        setShow(true);
-        setToasts((prev) => [...prev, typeOfToast]);
+    const handleHide = (notificaitonId) => {
+        clearTimeout(timerRef.current[notificaitonId]);
+        delete timerRef.current[notificaitonId];
+        setNotifications((prev) => {
+            return prev?.filter(({ id }) => {
+                return id != notificaitonId;
+            });
+        });
     };
-    console.log("Type of toast", toasts);
+    console.log(notifications);
     return (
         <>
-            {show && (
-                <div className="toast-container">
-                    {toasts?.map((element, index) => {
+            <div className="container">
+                <div className="toat-container">
+                    {notifications?.map(({ id, message, type }) => {
                         return (
-                            <>
-                                <div className="toast">
-                                    {element.type}
-                                    <span onClick={() => setShow(false)}>
-                                        x
-                                    </span>
-                                </div>
-                            </>
+                            <div key={id} className={`toast ${type}`}>
+                                {message}
+                                <p
+                                    className="cross-btn"
+                                    onClick={(e) => handleHide(id)}
+                                >
+                                    x
+                                </p>
+                            </div>
                         );
                     })}
                 </div>
-            )}
+            </div>
+
             <div className="btn-container">
-                <button
-                    onClick={(e) => {
-                        handlShow(e, { type: "Success" });
-                    }}
-                >
-                    Success Toast
+                <button onClick={() => handleShow("Success", "success")}>
+                    Success
                 </button>
-                <button
-                    onClick={(e) => {
-                        handlShow(e, { type: "Info" });
-                    }}
-                >
-                    Info Toast
+                <button onClick={() => handleShow("Info", "info")}>Info</button>
+                <button onClick={() => handleShow("Warning", "warning")}>
+                    Warning
                 </button>
-                <button
-                    onClick={(e) => {
-                        handlShow(e, { type: "Warning" });
-                    }}
-                >
-                    Warning Toast
-                </button>
-                <button
-                    onClick={(e) => {
-                        handlShow(e, { type: "Error" });
-                    }}
-                >
-                    Error Toast
+                <button onClick={() => handleShow("Error", "error")}>
+                    Error
                 </button>
             </div>
         </>
