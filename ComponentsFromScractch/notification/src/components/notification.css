@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cross-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5em;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: white;
+    color: green;
+    cursor: pointer;
+}
+
+.toat-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 20%;
+    border: 2px sold black;
+}
+
+.toast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    font-size: 1.2rem;
+    animation-name: notification-slid;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    margin-bottom: 1rem;
+}
+
+@keyframes notification-slid {
+    0% {
+        transform: translateX(150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.info{
+    background-color: aqua;
+}
+
+.success{
+    background-color: rgb(63, 163, 63);
+}
+
+.warning{
+    background-color: orange;
+}
+
+.error{
+    background-color: red;
+}
