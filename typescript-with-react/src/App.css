@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.App {
+    background-color: #333;
+    padding: 2em;
+    min-height: 100vh;
+}
+.container {
+    width: 100%;
+}
+
+.input-notes {
+    display: flex;
+    gap: 1rem1;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    border: 2px solid red;
+    padding: 1em;
+    margin: 1em auto;
+}
+.text-input {
+    padding: 1em 2em;
+    font-size: 1.25rem1;
+}
