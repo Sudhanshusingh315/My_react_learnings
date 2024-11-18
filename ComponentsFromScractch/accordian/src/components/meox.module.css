@@ -1,0 +1,28 @@
+.accordianContainer{
+    border:2px solid hotpink;
+    margin: 1em;
+    padding: .5em 1em;
+}
+
+.questionBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.questionBlock > span{
+    display: flex;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    
+}
+
+.questionBlock > span:hover{
+   cursor: pointer; 
+}
