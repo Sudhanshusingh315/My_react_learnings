@@ -1,5 +1,6 @@
 import './App.css'
 import OTP from './components/otp/OTP'
+import Paginaiton from './components/pagination/Pagination'
 import Star from './components/start-rating/Star'
 
 function App() {
@@ -8,11 +9,13 @@ function App() {
     ##### Start-rating component ##### 
         <Star/> 
     */}
-    
-    
 
     {/* // ##### OTP component #####  */}
-    <OTP/>
+    {/* <OTP/> */}
+
+
+    {/* // ##### Pagination component #####  */}
+    <Paginaiton/>
     </>
 }
 
