@@ -1,0 +1,21 @@
+.container{
+    width: 100% ;
+}
+
+.board{
+    width: 80%;
+    margin:0 auto;
+    max-width: 900px;
+    gap: 5px;
+    display: grid;
+}
+
+.cell{
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
